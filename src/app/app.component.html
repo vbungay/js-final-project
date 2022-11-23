@@ -1,0 +1,38 @@
+<div class="toolbarContainer">
+  <div class="homePageTitle">
+    PHONEBOOK APP
+  </div>
+  <div class="accountButton">
+    <ng-container *ngIf="authService.currentUser$ | async as user; else loginButton">
+      <button mat-button [mat-menu-trigger-for]="userMenu">
+        <mat-icon>account_circle</mat-icon>
+        {{user.displayName}}
+        <mat-icon>expand_more</mat-icon>
+      </button>
+    </ng-container>
+    <ng-template #loginButton>
+      <button mat-button routerLink="login">
+        <mat-icon>login</mat-icon>
+        Login
+      </button>
+    </ng-template>
+  </div>
+
+</div>
+
+<div class="content">
+  <ul class="nav justify-content-center">
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" routerLink="home">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" routerLink="phonebook">Phonebook</a>
+    </li>
+  
+  </ul>
+  <router-outlet></router-outlet> 
+</div>
+
+<mat-menu #userMenu="matMenu">
+  <button mat-menu-item (click)="logout()">Logout</button>
+</mat-menu>

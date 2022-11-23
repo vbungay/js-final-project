@@ -1,0 +1,25 @@
+<button mat-raised-button color="primary" (click)="openDialog()">Add New User</button>
+<br/>
+<br/>
+<div class="row">
+    <div class="column" *ngFor="let user of phonebookinfo$ | async">
+        <div class="card">
+            <div *ngIf="user.Gender as gender">
+               
+                <img *ngIf="gender === 'Female' || gender === 'Male'"
+                class="foo-icon"
+                [src]="'assets/img_avatar_' + gender.toLocaleLowerCase() + '.png'" alt="Avatar" style="width:100%">
+            </div>
+            
+            <div class="container-card">
+              <h4><b>{{user.FirstName}} {{user.LastName}} </b></h4> 
+              <p>{{user.Email}}</p> 
+              <p>{{user.PhoneNumber}}</p>
+              <button (click)="updateDialog(user.id)">Update</button>
+              <button (click)="deleteConfirmation(user.id)">Delete</button> 
+            </div>
+        </div>
+    </div>
+</div>
+
+

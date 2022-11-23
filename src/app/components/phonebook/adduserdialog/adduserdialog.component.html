@@ -1,0 +1,56 @@
+Add new User
+<mat-dialog-content [formGroup]="userForm">
+
+    <mat-form-field style="width: 300px">
+        <input matInput placeholder="First Name" formControlName="fname"/>
+        <mat-error *ngIf="fname?.errors?.['required']">
+            First Name is required
+        </mat-error>
+    </mat-form-field>
+    <br/>
+    <mat-form-field style="width: 300px">
+        <input matInput placeholder="Last Name" formControlName="lname" />
+        <mat-error *ngIf="lname?.errors?.['required']">
+            Last Name is required
+        </mat-error>
+    </mat-form-field>
+    <br/>
+    <mat-form-field style="width: 300px">
+        <input matInput placeholder="Email" formControlName="email" />
+        <mat-error *ngIf="email?.errors?.['required']">
+            Email is required
+        </mat-error>
+        <mat-error *ngIf="email?.errors?.['email']">
+            Please enter a correct email format
+        </mat-error>
+    </mat-form-field>
+    <br/>
+    <mat-form-field style="width: 300px">
+        <input matInput placeholder="Phone Number" formControlName="phone" />
+        <mat-error *ngIf="phone?.errors?.['required']">
+            Phone is required
+        </mat-error>
+        <mat-error *ngIf="phone?.errors?.['pattern']">
+            Please enter a valid 10-digit phone number
+        </mat-error>
+    </mat-form-field>
+    
+    <mat-form-field >
+        <mat-label>Gender</mat-label>
+        <select matNativeControl required formControlName="gender">
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+        </select>
+        <mat-error *ngIf="gender?.errors?.['required']">
+            Gender is required
+        </mat-error>
+    </mat-form-field>
+     
+ 
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button class="mat-raised-button mat-accent" (click)="closeDialog()">Close</button>
+    <button class="mat-raised-button mat-primary"(click)="addNewInfo()">Save</button>
+</mat-dialog-actions>
+
+

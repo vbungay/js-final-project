@@ -1,0 +1,47 @@
+mat-toolbar {
+    justify-content: space-between;
+}
+
+.content {
+    padding: 10px;
+}
+
+.toolbarContainer {
+    height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+
+}
+
+.homePageTitle {
+    margin: auto;
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
+    font-size: 20px
+}
+
+.accountButton {
+    margin-bottom: 5px;
+}
+
+
+/* FOR NAV BAR */
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: max-content;
+  }
+  
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  .container {
+    padding: 2px 16px;
+  }
+  .active {
+    text-decoration: underline;
+    background-color: hotpink;
+  }

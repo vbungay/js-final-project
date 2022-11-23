@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "js-final-project-13839": {
+      "hosting": {
+        "final-project": [
+          "js-final-project-13839"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "js-final-project-13839"
+  }
+}
