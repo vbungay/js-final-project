@@ -1,4 +1,4 @@
-<div class="form-container">
+<!--<div class="form-container">
     <div class="container">
         <div>
             <h1 style="text-align:center">Login</h1>
@@ -30,4 +30,39 @@
         </div>
     </div>
     
+</div>-->
+
+<div class="container">
+    <div class="photo">
+        <img src="./assets/login.svg" alt="">
+    </div>
+    <div class="form-container">
+        <div class="inner-form">
+            <div class="input-area">
+                <form [formGroup]="loginForm" (ngSubmit)="submit()">
+                    <mat-form-field>
+                        <input matInput placeholder="Email Address" formControlName="email" />
+                        <mat-error *ngIf="email?.errors?.['required']">
+                            Email is required
+                        </mat-error>
+                        <mat-error *ngIf="email?.errors?.['email']">
+                            Please enter a correct email format
+                        </mat-error>
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput placeholder="Password" formControlName="password" type="password" />
+                        <mat-error *ngIf="email?.errors?.['required']">
+                            Password is required
+                        </mat-error>
+                    </mat-form-field>
+                    <button class="btn" mat-raised-button color="primary">
+                        Login
+                    </button>
+                    <div class="span">
+                        <span>No Account? <a routerLink="//sign-up"> Sign-Up</a></span>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
 </div>
